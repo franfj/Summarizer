@@ -3,11 +3,11 @@ from summarizer.src.summarizer.summarizer import summarizer
 
 
 def main():
-    summarizer._text("Test")
-    summarizer._algo(Summ.DUMMY)
-    summarizer._percentage(0.5)
+    summarizer.text = "Test"
+    summarizer.algo = Summ.DUMMY
+    summarizer.percentage = 0.5
 
-    print(summarizer.run())
+    print(summarizer.summarize())
 
 
 if __name__ == "__main__":

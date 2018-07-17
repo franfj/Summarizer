@@ -1,3 +1,6 @@
 class Summ:
-    DUMMY = 1
-    TEXT_RANK = 2
+    """
+    Summ is an enum type that stores an entry for each text summarization algorithm.
+    """
+    DUMMY = "dummy"
+    TEXT_RANK = "textRank"
