@@ -37,6 +37,9 @@ class Summarizer(object):
         self._percentage = value
 
 
+summarizer = Summarizer()
+
+
 class SummarizerFactory(object):
     @staticmethod
     def factory(algo):
