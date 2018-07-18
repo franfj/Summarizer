@@ -11,6 +11,7 @@ def main():
     summarizer.percentage = 0.5
 
     print(summarizer.summarize())
+    print(summarizer.schematize())
 
 
 if __name__ == "__main__":
