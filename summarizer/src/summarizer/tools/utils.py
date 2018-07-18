@@ -1,4 +1,4 @@
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import sent_tokenize
 
 
 class Utils(object):
