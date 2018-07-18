@@ -1,5 +1,6 @@
 from algo.dummyAlgo import DummySummarizerAlgo
 from algo.summ import Summ
+from tools.utils import Utils
 
 
 class Summarizer(object):
@@ -17,6 +18,9 @@ class Summarizer(object):
     def summarize(self):
         textSummarizer = SummarizerFactory.factory(self._algo)
         return textSummarizer.run(self._text, self._percentage)
+
+    def schematize(self):
+        return Utils.getSentences(self.summarize())
 
     @property
     def text(self):
