@@ -11,20 +11,20 @@ class Utils(object):
     """
 
     @staticmethod
-    def getSentences(text):
+    def get_sentences(text):
         return sent_tokenize(text)
 
     @staticmethod
-    def getBagOfWords(sentence):
+    def get_bag_of_words(sentence):
         return word_tokenize(sentence)
 
     @staticmethod
-    def detectLang(text):
+    def detect_lang(text):
         return languages.get(alpha2=detect(text)).name.lower()
 
     @staticmethod
-    def getOutputLength(nSentences, percentage):
-        length = math.floor(float(nSentences) * percentage)
+    def get_output_length(n_sentences, percentage):
+        length = math.floor(float(n_sentences) * percentage)
 
         if length < 1:
             return 1

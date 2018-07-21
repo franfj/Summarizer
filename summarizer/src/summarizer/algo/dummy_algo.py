@@ -1,4 +1,4 @@
-from abstractSummarizerAlgo import AbstractSummarizerAlgo
+from abstract_summarizer_algo import AbstractSummarizerAlgo
 
 
 class DummySummarizerAlgo(AbstractSummarizerAlgo):
