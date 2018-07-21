@@ -1,5 +1,6 @@
-from algo.dummyAlgo import DummySummarizerAlgo
+from algo.dummy_algo import DummySummarizerAlgo
 from algo.summ import Summ
+from algo.text_rank_algo import TextRankAlgo
 from tools.utils import Utils
 
 
@@ -16,11 +17,11 @@ class Summarizer(object):
         self._percentage = percentage
 
     def summarize(self):
-        textSummarizer = SummarizerFactory.factory(self._algo)
-        return textSummarizer.run(self._text, self._percentage)
+        text_summarizer = SummarizerFactory.factory(self._algo)
+        return text_summarizer.run(self._text, self._percentage)
 
     def schematize(self):
-        return Utils.getSentences(self.summarize())
+        return Utils.get_sentences(self.summarize())
 
     @property
     def text(self):
@@ -71,3 +72,6 @@ class SummarizerFactory(object):
     def factory(algo):
         if algo.lower() == Summ.DUMMY.lower():
             return DummySummarizerAlgo()
+
+        if algo.lower() == Summ.TEXT_RANK.lower():
+            return TextRankAlgo()
