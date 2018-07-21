@@ -2,6 +2,7 @@ import math
 
 from iso639 import languages
 from langdetect import detect
+from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
 
 
@@ -12,7 +13,11 @@ class Utils(object):
 
     @staticmethod
     def get_sentences(text):
-        return sent_tokenize(text)
+        sentences = []
+        for sentence in sent_tokenize(text):
+            sentences.append(sentence[:-1])  # Remove punctuation
+
+        return sentences
 
     @staticmethod
     def get_bag_of_words(sentence):
@@ -30,3 +35,10 @@ class Utils(object):
             return 1
 
         return length
+
+    @staticmethod
+    def remove_stop_words(sentences, text_lang):
+        for i in range(0, len(sentences)):
+            for word in sentences[i]:
+                if word in stopwords.words(text_lang):
+                    sentences[i].remove(word)
