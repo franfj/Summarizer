@@ -1,3 +1,0 @@
-[x] Develop a common structure that supports multiple algorithms
-[] Decide whether to keep or not the Summ enum type, or use string literals
-[] Develop TextRank
