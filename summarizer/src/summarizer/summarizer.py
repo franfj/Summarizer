@@ -1,5 +1,6 @@
 from algo.dummyAlgo import DummySummarizerAlgo
 from algo.summ import Summ
+from algo.textRankAlgo import TextRankAlgo
 from tools.utils import Utils
 
 
@@ -71,3 +72,6 @@ class SummarizerFactory(object):
     def factory(algo):
         if algo.lower() == Summ.DUMMY.lower():
             return DummySummarizerAlgo()
+
+        if algo.lower() == Summ.TEXT_RANK.lower():
+            return TextRankAlgo()

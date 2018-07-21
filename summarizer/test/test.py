@@ -7,7 +7,7 @@ def main():
         inputText = f.readlines()[0]
 
     summarizer.text = inputText
-    summarizer.algo = Summ.DUMMY
+    summarizer.algo = Summ.TEXT_RANK
     summarizer.percentage = 0.5
 
     print(summarizer.summarize())
