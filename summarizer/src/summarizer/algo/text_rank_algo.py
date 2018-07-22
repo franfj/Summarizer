@@ -1,6 +1,5 @@
 from abstract_summarizer_algo import AbstractSummarizerAlgo
-from summarizer.src.summarizer.tools.tf_idf import TfIdf
-from summarizer.src.summarizer.tools.utils import Utils
+from tools import TfIdf, Utils, CosineSimilarity
 
 
 class TextRankAlgo(AbstractSummarizerAlgo):
@@ -9,6 +8,9 @@ class TextRankAlgo(AbstractSummarizerAlgo):
     """
 
     def run(self, text, percentage):
+        # Avoid decoding errors
+        text = text.decode('utf-8')
+
         # Get sentences
         sentences = Utils.get_sentences(text)
 
@@ -21,28 +23,29 @@ class TextRankAlgo(AbstractSummarizerAlgo):
         original_sentences = Utils.get_sentences(text)
         processed_sentences = self.initilize_processed_sentences(original_sentences, text_lang)
 
-        tf_dictionaries = []
-        for sentence in processed_sentences:
-            sentence_dict = {}
-            for word in sentence:
-                sentence_dict[word] = TfIdf.get_term_frequency(word, sentence)
-            tf_dictionaries.append(sentence_dict)
+        tf_idf_dictionaries = TfIdf.get_tf_idf(processed_sentences)
 
-        idf_dict = {}
-        for tf_dict in tf_dictionaries:
-            for word in tf_dict:
-                idf_dict[word] = TfIdf.get_inverse_document_frequency(word, processed_sentences)
+        cosine_similarities = {}
+        for i in range(0, len(tf_idf_dictionaries)):
+            aux = 0.0
+            for j in range(0, len(tf_idf_dictionaries)):
+                if i != j:
+                    aux += CosineSimilarity.get_cosine_similarity(tf_idf_dictionaries[i], tf_idf_dictionaries[j])
+            cosine_similarities[i] = aux
 
-        tf_idf_dictionaries = []
-        for tf_dict in tf_dictionaries:
-            tf_idf_dict = {}
-            for tf in tf_dict:
-                tf_idf_dict[tf] = tf_dict[tf] * idf_dict[tf]
-            tf_idf_dictionaries.append(tf_idf_dict)
+        sorted_sentences = sorted(cosine_similarities, key=cosine_similarities.get, reverse=True)
 
-        print tf_idf_dictionaries
+        output_sentences = []
+        for i in range(0, output_length):
+            output_sentences.append(sorted_sentences[i])
 
-        return original_sentences[0]
+        output_sentences = sorted(output_sentences)
+
+        output = ''
+        for i in output_sentences:
+            output += original_sentences[i] + '. '
+
+        return output
 
     def initilize_processed_sentences(self, original_sentences, text_lang):
         sentences = []
