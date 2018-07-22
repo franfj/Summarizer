@@ -1,7 +1,7 @@
-from algo.dummy_algo import DummySummarizerAlgo
-from algo.summ import Summ
-from algo.text_rank_algo import TextRankAlgo
-from tools.utils import Utils
+from algo import DummySummarizerAlgo
+from algo import Summ
+from algo import TextRankAlgo
+from algo.tools import Utils
 
 
 class Summarizer(object):
@@ -21,7 +21,12 @@ class Summarizer(object):
         return text_summarizer.run(self._text, self._percentage)
 
     def schematize(self):
-        return Utils.get_sentences(self.summarize())
+        sentences = Utils.get_sentences(self.summarize())
+        output = ''
+
+        for sentence in sentences:
+            output += '- ' + sentence + '\n'
+        return output
 
     @property
     def text(self):

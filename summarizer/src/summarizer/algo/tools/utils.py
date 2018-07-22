@@ -34,7 +34,7 @@ class Utils(object):
         if length < 1:
             return 1
 
-        return length
+        return int(length)
 
     @staticmethod
     def remove_stop_words(sentences, text_lang):
