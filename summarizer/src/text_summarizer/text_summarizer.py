@@ -20,6 +20,21 @@ class Summarizer(object):
         text_summarizer = SummarizerFactory.factory(self._algo)
         return text_summarizer.run(self._text, self._percentage)
 
+    def summarize(self, text):
+        self.init_text(text)
+        return self.summarize()
+
+    def summarize(self, text, algo):
+        self.init_text(text)
+        self._algo = algo
+        return self.summarize()
+
+    def summarize(self, text, algo, percentage):
+        self.init_text(text)
+        self._algo = algo
+        self._percentage = percentage
+        return self.summarize()
+
     def schematize(self):
         sentences = Utils.get_sentences(self.summarize())
         output = ''
@@ -28,6 +43,30 @@ class Summarizer(object):
             output += '- ' + sentence + '\n'
         return output
 
+    def schematize(self, text):
+        self.init_text(text)
+        return self.schematize()
+
+    def schematize(self, text, algo):
+        self.init_text(text)
+        self._algo = algo
+        return self.schematize()
+
+    def schematize(self, text, algo, percentage):
+        self.init_text(text)
+        self._algo = algo
+        self._percentage = percentage
+        return self.schematize()
+
+    def init_text(self, text):
+        # Remove line feeds
+        text.replace('\n. ', '.')
+        text.replace('\n.', '. ')
+        text.replace('\n . ', '.')
+        text.replace('\n .', '. ')
+        text.replace('\n', '. ')
+        self._text = text
+
     @property
     def text(self):
         return self._text
@@ -35,7 +74,7 @@ class Summarizer(object):
     @text.setter
     def text(self, value):
         if type(value) == str:  # type checking
-            self._text = value
+            self.init_text(value)
         else:
             raise Exception("Invalid value for text")
 
