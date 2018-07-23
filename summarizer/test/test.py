@@ -1,5 +1,6 @@
-from summarizer.src.summarizer.algo.summ import Summ
-from summarizer.src.summarizer.summarizer import summarizer
+from algo.summ import Summ
+
+from text_summarizer import summarizer
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
     summarizer.algo = Summ.TEXT_RANK
     summarizer.percentage = 0.25
 
-    print(summarizer.summarize())
+    # print(summarizer.summarize())
     print(summarizer.schematize())
 
 
