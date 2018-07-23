@@ -11,7 +11,7 @@ class Summarizer(object):
     Also, is the responsible of calling the run method of the summarization algorithm.
     """
 
-    def __init__(self, text="Dummy Text", algo=Summ.DUMMY, percentage=0.25):
+    def __init__(self, text="Dummy Text", algo=Summ.TEXT_RANK, percentage=0.25):
         self._text = text
         self._algo = algo
         self._percentage = percentage
