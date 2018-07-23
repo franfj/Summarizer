@@ -63,7 +63,7 @@ class Summarizer(object):
 
 
 """
-The summarizer instance to be imported.
+The text_summarizer instance to be imported.
 """
 summarizer = Summarizer()
 
