@@ -1,5 +1,6 @@
-from summarizer.src.summarizer.algo.summ import Summ
-from summarizer.src.summarizer.summarizer import summarizer
+from algo.summ import Summ
+
+from text_summarizer import summarizer
 
 
 def main():
