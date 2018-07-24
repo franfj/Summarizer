@@ -1,5 +1,4 @@
 from algo.summ import Summ
-
 from text_summarizer import summarizer
 
 

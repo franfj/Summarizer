@@ -1,1 +1,1 @@
-
+name = "text_summarizer"

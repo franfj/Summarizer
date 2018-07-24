@@ -1,7 +1,7 @@
 from algo import DummySummarizerAlgo
 from algo import Summ
 from algo import TextRankAlgo
-from algo.tools import Utils
+from algo import Utils
 
 
 class Summarizer(object):
@@ -47,13 +47,22 @@ class Summarizer(object):
         return output
 
     def init_text(self, text):
+        # Add final point if it does not exist
+        if text[-1:] is not '.':
+            text += '.'
+
         # Remove line feeds
-        text.replace('\n. ', '.')
-        text.replace('\n.', '. ')
-        text.replace('\n . ', '.')
-        text.replace('\n .', '. ')
-        text.replace('\n', '. ')
-        self._text = text
+        new_text = ''
+
+        lines = text.split('\n')
+        for line in lines:
+            line = line.strip()
+            if line[-1:] is not '.':
+                line += '.'
+            new_text += " " + line
+
+        print new_text
+        self._text = new_text
 
     @property
     def text(self):

@@ -40,5 +40,8 @@ class Utils(object):
     def remove_stop_words(sentences, text_lang):
         for i in range(0, len(sentences)):
             for word in sentences[i]:
-                if word in stopwords.words(text_lang):
-                    sentences[i].remove(word)
+                try:
+                    if word in stopwords.words(text_lang):
+                        sentences[i].remove(word)
+                except IOError:
+                    return

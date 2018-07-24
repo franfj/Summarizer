@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="text_summarizer",
-    version="0.0.2.1",
+    version="0.0.3",
     author="Francisco Javier Rodrigo Gines",
     author_email="franjrg94@gmail.com",
     description="A text summarization package",
