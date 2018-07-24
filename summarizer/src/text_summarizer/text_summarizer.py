@@ -47,7 +47,13 @@ class Summarizer(object):
         return output
 
     def init_text(self, text):
+        try:
+            text = text.encode('utf-8')
+        except:
+            pass
+
         # Add final point if it does not exist
+        text = text.strip()
         if text[-1:] is not '.':
             text += '.'
 
@@ -57,11 +63,10 @@ class Summarizer(object):
         lines = text.split('\n')
         for line in lines:
             line = line.strip()
-            if line[-1:] is not '.':
+            if not line and line[-1:] is not '.':
                 line += '.'
             new_text += " " + line
 
-        print new_text
         self._text = new_text
 
     @property
