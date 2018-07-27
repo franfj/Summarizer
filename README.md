@@ -16,7 +16,7 @@ from text_summarizer import summarizer
 
 # Init summarizer parameters
 summarizer.text = input_text
-summarizer.algo = Summ.TEXT_RANK    # Summ.TEXT_RANK is equals to "textrank"
+summarizer.algo = Summ.TEXT_RANK    # Summ.TEXT_RANK is equal to "textrank"
 summarizer.percentage = 0.25
 
 # Summarize with summarize() (returns a paragraph) or schematize() (returns a schema)
