@@ -1,3 +1,7 @@
+[![PyPI version](https://badge.fury.io/py/text-summarizer.svg)](https://badge.fury.io/py/text-summarizer)
+[![PyPI python version](https://img.shields.io/pypi/pyversions/text-summarizer.svg)](https://badge.fury.io/py/text-summarizer)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+
 # Text-Summarizer
 Text summarization Python library (in progress)
 
@@ -32,7 +36,7 @@ summarizer.summarize(text_to_be_summarized, "textrank", 0.5)
 
 [More info in icoxfog417/awesome-text-summarization](https://github.com/icoxfog417/awesome-text-summarization)
 
-### License
+#### License
 
 Copyright 2018 Francisco Javier Rodrigo Ginés
 
