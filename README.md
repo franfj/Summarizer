@@ -9,9 +9,7 @@ Text summarization Python library (in progress)
 pip install text-summarizer
 
 #### Packages needed
-- NLTK
-- iso-639
-- lang-detect
+See requirements.txt
 
 #### Usage
 ~~~~
