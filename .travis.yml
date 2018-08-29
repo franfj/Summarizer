@@ -1,12 +1,12 @@
+sudo: false
+
 language: python
 
 python:
   - "2.7" 
-  
-sudo: false
 
 before_install:
-- chmod +x summarizer/test/*.py
+  - chmod +x summarizer/test/*.py
 
 install:
   - pip install -r summarizer/requirements.txt
