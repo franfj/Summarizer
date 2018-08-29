@@ -2,6 +2,8 @@ language: python
 
 python:
   - "2.7" 
+  
+sudo: true
 
 install:
   - pip install -r summarizer/requirements.txt
