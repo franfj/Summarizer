@@ -1,6 +1,11 @@
 language: python
+
 python:
-  - "2.7" # 2.7 development branch
-# command to install dependencies
+  - "2.7" 
+
 install:
   - pip install -r summarizer/requirements.txt
+  
+script:
+  - summarizer/test/test.py
+  
