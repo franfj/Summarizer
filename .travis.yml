@@ -12,5 +12,5 @@ install:
   - pip install -r summarizer/requirements.txt
   
 script:
-  - summarizer/test/test.py
+  - python summarizer/test/test.py
   
