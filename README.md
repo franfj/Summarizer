@@ -1,6 +1,7 @@
 [![PyPI version](https://badge.fury.io/py/text-summarizer.svg)](https://badge.fury.io/py/text-summarizer)
 [![PyPI python version](https://img.shields.io/pypi/pyversions/text-summarizer.svg)](https://badge.fury.io/py/text-summarizer)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffranfj%2FSummarizer.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffranfj%2FSummarizer?ref=badge_shield)
 
 # Text-Summarizer
 Text summarization Python library (in progress)
@@ -50,3 +51,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffranfj%2FSummarizer.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffranfj%2FSummarizer?ref=badge_large)
