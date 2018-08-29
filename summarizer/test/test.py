@@ -3,7 +3,7 @@ from text_summarizer import summarizer
 
 
 def main():
-    with open("../../texts/test.txt") as f:
+    with open("texts/test.txt") as f:
         input_text = f.readlines()[0]
 
     summarizer.text = input_text
