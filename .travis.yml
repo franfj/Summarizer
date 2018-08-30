@@ -13,13 +13,11 @@ before_install:
   - chmod +x summarizer/test/*.py
 
 install:
-  - yarn install
   - pip install -r summarizer/requirements.txt
   - travis_wait 30 python -m nltk.downloader punkt  
   - travis_wait 30 python -m nltk.downloader stopwords
   
 script:
-  - yarn build
   - sonar-scanner
-  - python summarizer/test/test.py
+# - python summarizer/test/test.py
   
