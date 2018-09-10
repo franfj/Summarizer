@@ -2,5 +2,5 @@
 
 import sys
 
-sys.path.append('../src/algo')
-sys.path.append('../src/')
+sys.path.append('summarizer/src/algo')
+sys.path.append('summarizer/src/')
