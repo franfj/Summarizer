@@ -15,10 +15,12 @@ before_install:
 install:
   - pip install -r summarizer/requirements.txt
   - pip install pytest
+  - pip install coverage
   - travis_wait 30 python -m nltk.downloader punkt  
   - travis_wait 30 python -m nltk.downloader stopwords
   
 script:
-  - sonar-scanner
   - pytest
+  - coverage xml -i
+  - sonar-scanner
   
