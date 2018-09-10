@@ -21,6 +21,7 @@ install:
   
 script:
   - pytest
+  - coverage run
   - coverage xml -i
   - sonar-scanner
   
