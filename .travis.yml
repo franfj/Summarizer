@@ -22,6 +22,6 @@ install:
   
 script:
   - pytest
-  - nosetests --with-coverage --cover-erase --cover-package=summarizer --cover-html
+  - nosetests --with-coverage --cover-erase --cover-package=summarizer --with-xunit
   - sonar-scanner
   
