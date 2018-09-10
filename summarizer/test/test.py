@@ -1,9 +1,12 @@
-from algo.summ import Summ
+# path imports
+import __init__ as path_appends
+
+from summ import Summ
 from text_summarizer import summarizer
 
 
 def main():
-    with open("texts/test.txt") as f:
+    with open("../../texts/test.txt") as f:
         input_text = f.readlines()[0]
 
     summarizer.text = input_text
@@ -12,6 +15,7 @@ def main():
 
     # print(summarizer.summarize())
     print(summarizer.schematize())
+
 
 if __name__ == "__main__":
     main()

@@ -7,4 +7,4 @@ class DummySummarizerAlgo(AbstractSummarizerAlgo):
     """
 
     def run(self, text, percentage):
-        return "ddddddDUMMY TEXT. DUMMY TEXT. DUMMY TEXT."
+        return "DUMMY TEXT. DUMMY TEXT. DUMMY TEXT."
