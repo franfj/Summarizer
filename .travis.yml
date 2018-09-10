@@ -9,8 +9,8 @@ addons:
   sonarcloud:
     organization: "franfj-github"
 
-before_install:
-  - chmod +x summarizer/test/*.py
+# before_install:
+#   - chmod +x summarizer/test/*.py
 
 install:
   - pip install -r summarizer/requirements.txt
