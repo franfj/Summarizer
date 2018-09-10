@@ -3,39 +3,38 @@ import unittest
 # path imports
 import __init__ as path_appends
 
-from summ import Summ
-from text_summarizer import summarizer
+from algo import DummySummarizerAlgo
 
 
 class DummyAlgoTestCase(unittest.TestCase):
     """ Tests for dummy_algo.py """
 
     def test_single_sentence_input(self):
-        summarizer.text = "This is a sentence."
-        summarizer.algo = Summ.DUMMY
-        summarizer.percentage = 0.25
+        text = "This is a sentence."
+        percentage = 0.25
+
+        dummy_summarizer = DummySummarizerAlgo()
 
         expected_result = "DUMMY TEXT. DUMMY TEXT. DUMMY TEXT."
-
-        self.assertTrue(expected_result == summarizer.summarize())
+        self.assertTrue(expected_result == dummy_summarizer.run(text, percentage))
 
     def test_multiple_sentences_input(self):
-        summarizer.text = "This is a sentence. \n This is another sentence."
-        summarizer.algo = Summ.DUMMY
-        summarizer.percentage = 0.25
+        text = "This is a sentence. \n This is another sentence."
+        percentage = 0.25
+
+        dummy_summarizer = DummySummarizerAlgo()
 
         expected_result = "DUMMY TEXT. DUMMY TEXT. DUMMY TEXT."
-
-        self.assertTrue(expected_result == summarizer.summarize())
+        self.assertTrue(expected_result == dummy_summarizer.run(text, percentage))
 
     def test_empty_input(self):
-        summarizer.text = ""
-        summarizer.algo = Summ.DUMMY
-        summarizer.percentage = 0.25
+        text = ""
+        percentage = 0.25
+
+        dummy_summarizer = DummySummarizerAlgo()
 
         expected_result = "DUMMY TEXT. DUMMY TEXT. DUMMY TEXT."
-
-        self.assertTrue(expected_result == summarizer.summarize())
+        self.assertTrue(expected_result == dummy_summarizer.run(text, percentage))
 
 
 if __name__ == '__main__':
