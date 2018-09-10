@@ -14,10 +14,11 @@ before_install:
 
 install:
   - pip install -r summarizer/requirements.txt
+  - pip install pytest
   - travis_wait 30 python -m nltk.downloader punkt  
   - travis_wait 30 python -m nltk.downloader stopwords
   
 script:
   - sonar-scanner
-  - python summarizer/test/test_dummy_algo.py
+  - pytest
   
