@@ -19,5 +19,5 @@ install:
   
 script:
   - sonar-scanner
-  - python summarizer/test/test_dummy_algo.py
+  - python summarizer/test/test_dummy_algo.py
   
