@@ -1,4 +1,4 @@
-"""Paths import."""
+""" Paths import """
 
 import sys
 
