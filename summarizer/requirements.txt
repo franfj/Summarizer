@@ -11,7 +11,7 @@ langdetect == 1.0.7
 
 # src/algo/tools/utils.py: 6
 # src/build/lib/algo/tools/utils.py: 6
-nltk == 3.3
+nltk == 3.4.5
 
 # src/setup.py: 1
 setuptools == 39.0.1
