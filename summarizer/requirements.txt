@@ -14,7 +14,7 @@ langdetect == 1.0.7
 nltk == 3.4.5
 
 # src/setup.py: 1
-setuptools == 39.0.1
+setuptools == 65.5.1
 
 # src/build/lib/text_summarizer/__init__.py: 1
 # src/build/lib/text_summarizer/text_summarizer.py: 1,2,3,4
